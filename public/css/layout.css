@@ -99,6 +99,7 @@ button {
   margin-right: 10px;
   max-width: 50%;
   word-wrap: break-word;
+  white-space: pre;
 }
 .chattingBox .list li.me {
   flex-direction: row-reverse;

@@ -99,15 +99,24 @@
       }
     });
     $(".contents .sendBox #msg").on("keyup", function (e) {
+      console.log(e);
       if (e.keyCode === 13) {
         if ($("#msg").val().trim() === "") {
           e.preventDefault();
           $("#msg").val("");
           return;
         }
-        const chattingItem = { nickName: $("#nickName").val(), msg: $(".sendBox #msg").val() };
-        socket.emit("chatting", chattingItem);
-        $("#msg").val("");
+        if (!e.shiftKey) {
+          const chattingItem = {
+            nickName: $("#nickName").val(),
+            //  msg: $(".sendBox #msg").val().replaceAll("\n", "<br>") };
+            msg: $(".sendBox #msg").val(),
+          };
+          // 출력되는 메시지의 줄바꿈 \n을br로바꾼다.
+          socket.emit("chatting", chattingItem);
+          $("#msg").val("");
+          $(".btnSend").removeClass("on");
+        }
       }
       if ($("#msg").val().trim() !== "") {
         $(".btnSend").addClass("on");

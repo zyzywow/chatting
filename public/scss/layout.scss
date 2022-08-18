@@ -98,6 +98,8 @@ button {
             margin-right: 10px;
             max-width: 50%;
             word-wrap: break-word;
+            white-space: pre;
+            // white-space: pre - 눈에보이는대로 인식해서 출력해달라;
           }
         }
       }
