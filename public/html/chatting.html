@@ -62,13 +62,13 @@
   <script>
     const socket = io();
 
-    $(".contents .sendBox #msg").on("keyup", function (e) {
-      if (e.keyCode === 13 && 16)
-        if (!e.shiftKey) {
-          e.preventDefault();
-          // $(".contents .sendBox #msg").val("\n");
-        }
-    });
+    // $(".contents .sendBox #msg").on("keyup", function (e) {
+    //   if (e.keyCode === 13 && 16)
+    //     if (!e.shiftKey) {
+    //       e.preventDefault();
+    //       // $(".contents .sendBox #msg").val("\n");
+    //     }
+    // });
     // 서버에서 넘어오는 이벤트 받는 곳
     // socket.on("chatting", (data) => {});
     // socket.on("yaho", (data) => {
